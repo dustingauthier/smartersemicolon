@@ -1,0 +1,71 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.dustingauthier.SmarterSemicolon</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>SmarterSemicolon</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="dustingauthier1@gmail.com" url="https://github.com/YourUsername/YourRepository">Dustin Gauthier
+    </vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description>
+        <![CDATA[
+        <html>
+        <body>
+            <h2>How to Use the Smarter Semicolon Plugin</h2>
+            <p>The Smarter Semicolon Plugin enhances your coding efficiency by providing customizable actions to insert semicolons in your code. Here's how to get started:</p>
+            <ol>
+                <li>Open <strong>Settings</strong> by going to <em>File > Settings</em> (on Windows/Linux) or <em>IntelliJ IDEA > Preferences</em> (on macOS).</li>
+                <li>Navigate to <strong>Keymap</strong> to customize how you trigger the plugin's actions.</li>
+                <li>In the Keymap settings, search for "<strong>semicolon</strong>" to find the plugin's actions. You can assign or change shortcuts for the following actions:</li>
+                <ul>
+                    <li><strong>1st Action: Add Semicolon and Leave Caret in Current Position</strong> - This action inserts a semicolon at the end of the current line without moving the caret. It is commonly set to <code>Alt+;</code>.</li>
+                    <li><strong>2nd Action: Add Semicolon and Move Caret to End of Line</strong> - This action adds a semicolon at the end of the line and moves the caret to the end of this line. The typical shortcut is <code>Ctrl+;</code>.</li>
+                    <li><strong>3rd Action: Add Semicolon and Move Caret to New Line</strong> - This action inserts a semicolon at the end of the current line and moves the caret to the beginning of the next line. It is usually assigned to <code>Ctrl+Shift+;</code>.</li>
+                </ul>
+            </ol>
+            <p>After setting up the shortcuts, you can easily insert semicolons in your code with your preferred caret behavior, improving your development workflow.</p>
+            <hr/>
+            <h2>Як користуватися плагіном Smarter Semicolon</h2>
+            <p>Плагін Smarter Semicolon призначений для підвищення швидкості  кодування, надаючи можливість додавати крапку з комою у кінець рядка. Спочатку потрібно:</p>
+            <ol>
+                <li>Відкрити Налаштування, перейшовши в File > Settings (на Windows/Linux) або IntelliJ IDEA > Preferences (на macOS).</li>
+                <li>Перейти до Keymap, щоб налаштувати відповідні комбінації клавіш.</li>
+                <li>У налаштуваннях Keymap знайти "semicolon". Ви можете створити нові або змінити існуючі комбінації для наступних дій:</li>
+                <ul>
+                    <li><strong>Дія 1: Додати крапку з комою та залишити курсор на поточній позиції - Ця дія додає крапку з комою у кінець поточного рядка, не переміщуючи курсор. Зазвичай встановлюється на <code>Alt+;</code>.</li>
+                    <li><strong>Дія 2: Додати крапку з комою та перемістити курсор у кінець рядка - Ця дія додає крапку з комою у кінець рядка та переміщує курсор у кінець цього рядка. Типове скорочення - <code>Ctrl+;</code>.</li>
+                    <li><strong>Дія 3: Додати крапку з комою та перемістити курсор на новий рядок - Ця дія вставляє крапку з комою у кінець поточного рядка та переміщує курсор на початок наступного рядка. Зазвичай призначається на <code>Ctrl+Shift+;</code>.</li>
+                </ul>
+            </ol>
+            <p>Після налаштувань ви легко зможете вставляти крапки з комою у ваш код із бажаною поведінкою курсора, що зробить ваш робочий процес більш комфортним.</p>
+        </body>
+        </html>
+        ]]>
+    </description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+    <actions>
+        <action id="AddSemicolonLeaveCaret" class="smartersemicolon.AddSemicolonLeaveCaretAction"
+                text="Add Semicolon and Leave Caret in Current Position"/>
+        <action id="AddSemicolonMoveCaretEOL" class="smartersemicolon.AddSemicolonMoveCaretEOLActionAction"
+                text="Add Semicolon and Move Caret to End of Line"/>
+        <action id="AddSemicolonMoveCaretNewLine" class="smartersemicolon.AddSemicolonMoveCaretNewLineAction"
+                text="Add Semicolon and Move Caret to New Line"/>
+
+    </actions>
+</idea-plugin>
